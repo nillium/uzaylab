@@ -164,8 +164,8 @@
 
 				const loader = new GLTFLoader();
 
-				loader.load( 'Flamingo.glb', function ( gltf ) {
-
+				//loader.load( 'Flamingo.glb', function ( gltf ) {
+					loader.load( 'scene.gltf', function ( gltf ) {
 					const mesh = gltf.scene.children[ 0 ];
 
 					const s = 0.35;
@@ -178,9 +178,9 @@
 
 					scene.add( mesh );
 
-					const mixer = new THREE.AnimationMixer( mesh );
-					mixer.clipAction( gltf.animations[ 0 ] ).setDuration( 1 ).play();
-					mixers.push( mixer );
+					// const mixer = new THREE.AnimationMixer( mesh );
+					// mixer.clipAction( gltf.animations[ 0 ] ).setDuration( 1 ).play();
+					// mixers.push( mixer );
 
 				} );
 
@@ -231,14 +231,14 @@
 
 			//
 
-			function animate() {
+			//function animate() {
 
-				requestAnimationFrame( animate );
+			//	requestAnimationFrame( animate );
 
-				render();
-				stats.update();
+			//	render();
+			//	stats.update();
 
-			}
+			//}
 
 			function render() {
 
