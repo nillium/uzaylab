@@ -59,7 +59,7 @@
 						// use of RoughnessMipmapper is optional
 						const roughnessMipmapper = new RoughnessMipmapper( renderer );
 
-						const loader = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
+						const loader = new GLTFLoader();
 						loader.load( 'test.glb', function ( gltf ) {
 
 							gltf.scene.traverse( function ( child ) {
