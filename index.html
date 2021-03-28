@@ -22,6 +22,22 @@
 			const cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
 
+			const loader = new GLTFLoader();
+
+			loader.load( 'models/test.glb', function ( gltf ) {
+
+			scene.add( gltf.scene );
+
+			}, undefined, function ( error ) {
+
+			console.error( error );
+
+			} );
+
+
+
+
+
 			camera.position.z = 5;
 
 			const animate = function () {
