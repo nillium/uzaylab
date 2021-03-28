@@ -59,19 +59,17 @@
 						// use of RoughnessMipmapper is optional
 						const roughnessMipmapper = new RoughnessMipmapper( renderer );
 
-						const loader = new GLTFLoader().setPath( 'models/' );
-						loader.load( 'test.glb', function ( gltf ) {
+						const loader = new GLTFLoader();
 
-							gltf.scene.traverse( function ( child ) {
+loader.load( 'models/test.glb', function ( gltf ) {
 
-								if ( child.isMesh ) {
+	scene.add( gltf.scene );
 
-									// TOFIX RoughnessMipmapper seems to be broken with WebGL 2.0
-									// roughnessMipmapper.generateMipmaps( child.material );
+}, undefined, function ( error ) {
 
-								}
-//fs
-							} );
+	console.error( error );
+
+} );
 
 							scene.add( gltf.scene );
 
